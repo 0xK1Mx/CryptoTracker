@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crypto Price Tracker</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+
+    <script type="module" src="./src/controller.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1 class="app-title">Crypto Price Tracker</h1>
+      </header>
+
+      <form class="crypto-search">
+        <input
+          type="text"
+          id="cryptoInput"
+          class="crypto-search__input"
+          placeholder="Enter cryptocurrency (e.g. Bitcoin)"
+        />
+        <button class="crypto-search__btn" id="searchBtn">Search</button>
+      </form>
+
+      <div class="crypto-info__container">
+        <div class="crypto-info__header">
+          <h2 class="crypto-section__title">Top 20 cryptocurrencies</h2>
+          <ul class="crypto-list"></ul>
+        </div>
+
+        <section class="crypto-info" id="cryptoInfoSection">
+          <div class="crypto-info-heading">
+            <div class="crypto-info__group">
+              <img
+                src="https://cryptocompare.com/media/19633/btc.png"
+                alt="Bitcoin"
+                id="cryptoImage"
+                class="crypto-info__image"
+              />
+              <h2 class="crypto-info__name">Bitcoin</h2>
+            </div>
+            <p class="crypto-info__price" id="cryptoPrice">$42,000</p>
+          </div>
+          <div class="crypto-graph"></div>
+        </section>
+      </div>
+
+      <footer>
+        <p>&copy; 2025 Crypto Tracker</p>
+      </footer>
+    </div>
+  </body>
+</html>
