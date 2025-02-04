@@ -3,24 +3,33 @@ import View from "./View/view.js";
 import { API_URL } from "./config.js";
 import resultsView from "./View/resultsView.js";
 import resultsTopCryptoView from "./View/resultsTopCryptoView.js";
+import { cryptoMetric } from "./model.js";
+import { mapCryptoCoinID } from "./model.js";
 
 import * as model from "./model.js";
 
 const controlCrypto = async function () {
-  const id = searchView.getQuery();
-  await model.loadCoinData(id);
+  try {
+    const id = searchView.getQuery();
 
-  const crypto = model.state.cryptocurrency;
-  resultsView.render(crypto);
+    if (!mapCryptoCoinID.has(id)) {
+      throw new Error(`The coin you are looking for does not exists`);
+    }
+    await model.loadCoinData(id);
+
+    const crypto = model.state.cryptocurrency;
+    const { metric } = model.cryptoMetric;
+    resultsView.render(crypto);
+    searchView._updateMetrics(Object.values(metric));
+  } catch (error) {
+    console.error(error);
+  }
 };
 
 const controlTopCrypto = async function () {
   await model.Top20Crypto();
-  model.Top20Crypto();
 
   const cryptoResult = model.state.search.results;
-  console.log(cryptoResult);
-
   resultsTopCryptoView.render(cryptoResult);
 };
 
