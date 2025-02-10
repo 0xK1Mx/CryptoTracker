@@ -23,14 +23,9 @@ export const coinList = async function () {
   } catch (error) {}
 };
 coinList();
-console.log(mapCryptoCoinID);
 
 export const loadCoinData = async function (id) {
   try {
-    if (!mapCryptoCoinID.has(id)) {
-      throw new Error(`The coin you are looking for does not exists`);
-    }
-
     const response = await fetch(`${API_URL}&ids=${id}`);
 
     const data = await response.json();

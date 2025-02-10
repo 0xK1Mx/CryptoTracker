@@ -47,7 +47,7 @@ html {
 /* Body Styles */
 body {
   font-family: var(--font-family);
-  background-color: var(--background-color);
+  background-color: #fff;
   color: #343a40;
   display: flex;
   justify-content: center;
@@ -70,6 +70,7 @@ body {
 /* Header Styles */
 header {
   width: 100%;
+  height: fit-content;
 }
 .header-top {
   display: flex;
@@ -119,7 +120,6 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 10rem;
   border-bottom: solid #495057 1px;
 }
 .header-bottom-list {
@@ -141,10 +141,79 @@ header {
   font-weight: 600;
 }
 
+#myChart {
+  width: 70rem !important;
+  height: 35rem !important;
+}
+
+.bitcoin {
+  width: 100%;
+  height: 65vh;
+  margin-top: 5rem;
+  border-bottom: solid #495057 1px;
+}
+
+.bitcoin-wrapper {
+  display: flex;
+  margin: 0 auto;
+  width: 80%;
+}
+
+.bitcoin-title-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.bitcoin-img {
+  width: 4rem;
+}
+
+.bitcoin-title {
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
+}
+.bitcoin-price {
+  font-size: 4.8rem;
+  margin-bottom: 3rem;
+}
+
+.bitcoin-metrics-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.bitcoin-metrics-row {
+  display: flex;
+  gap: 2rem;
+}
+
+.bitcoin-metric__block {
+  height: 6rem;
+  width: 18rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  border: 1px solid #868686;
+}
+
+.bitcoin-metric__label {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.bitcoin-metric__value {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
 .app-title {
   font-size: var(--heading-font-size);
   color: #343a40;
-  color: ;
   font-weight: 600;
   letter-spacing: 1px;
 }
