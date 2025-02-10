@@ -5,16 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Crypto Price Tracker</title>
     <link rel="stylesheet" href="styles.css" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
 
-    <script type="module" src="./src/controller.js"></script>
+    <!-- <script type="module" src="./src/controller.js"></script> -->
   </head>
   <body>
-    <div class="container">
-      <header>
-        <h1 class="app-title">Crypto Price Tracker</h1>
-      </header>
+    <header>
+      <div class="header-top">
+        <h1 class="app-title">Hive</h1>
+        <nav class="navbar">
+          <ul class="navbar-list">
+            <li class="navbar-list__item">Cryptocurrencies</li>
+            <li class="navbar-list__item">Exchanges</li>
+            <li class="navbar-list__item">Product</li>
+          </ul>
+        </nav>
+        <div class="auth-buttons">
+          <button class="btn">Sign up</button>
+          <button class="btn">Login</button>
+        </div>
+      </div>
+      <div class="header-bottom">
+        <ul class="header-bottom-list">
+          <li class="header-bottom-list__item">
+            <span class="header-bottom-list__label">Crypto</span>
+            <a class="header-bottom-list__value" href="#"> 18,742</a>
+          </li>
+          <li class="header-bottom-list__item">
+            <span class="header-bottom-list__label">Crypto</span>
+            <a class="header-bottom-list__value" href="#">18,742</a>
+          </li>
+          <li class="header-bottom-list__item">
+            <span class="header-bottom-list__label">Exchanges</span>
+            <a class="header-bottom-list__value" href="#">768</a>
+          </li>
+          <li class="header-bottom-list__item">
+            <span class="header-bottom-list__label">Market Cap</span>
+            <a class="header-bottom-list__value" href="#">$3,2T</a>
+          </li>
+          <li class="header-bottom-list__item">
+            <span class="header-bottom-list__label">24h Vol</span>
+            <a class="header-bottom-list__value" href="#">$90,23B</a>
+          </li>
+          <li class="header-bottom-list__item">
+            <span class="header-bottom-list__label">ETH gas</span>
+            <a class="header-bottom-list__value" href="#">0.83 Gwei</a>
+          </li>
+        </ul>
+      </div>
+    </header>
 
+    <div class="container">
       <form class="crypto-search">
         <input
           type="text"
