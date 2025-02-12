@@ -69,6 +69,4 @@ export const Top20Crypto = async function () {
   });
 };
 
-console.log(state);
-
 // loadCoinData();

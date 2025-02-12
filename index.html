@@ -5,9 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Crypto Price Tracker</title>
     <link rel="stylesheet" href="styles.css" />
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-    <!-- <script type="module" src="./src/controller.js"></script> -->
+    <script type="module" src="./src/controller.js"></script>
   </head>
   <body>
     <header>
@@ -68,7 +67,6 @@
             <h1 class="bitcoin-title">Bitcoin</h1>
           </div>
 
-          <h1 class="bitcoin-price">$97,233</h1>
           <div class="bitcoin-metrics-container">
             <div class="bitcoin-metrics-row">
               <div class="bitcoin-metric__block">
@@ -102,11 +100,11 @@
             </div>
           </div>
         </div>
-        <canvas id="myChart"></canvas>
+        <h1 class="bitcoin-price">$97,233</h1>
       </div>
     </div>
 
-    <div class="container">
+    <!-- <div class="container"> -->
       <!-- <form class="crypto-search">
         <input
           type="text"
@@ -123,8 +121,8 @@
           <ul class="crypto-list"></ul>
         </div> -->
 
-      <section class="crypto-info" id="cryptoInfoSection">
-        <!-- <div class="crypto-info-heading">
+      <!-- <section class="crypto-info" id="cryptoInfoSection">
+        <div class="crypto-info-heading">
             <div class="crypto-info__group">
               <img
                 src="https://cryptocompare.com/media/19633/btc.png"
@@ -136,8 +134,8 @@
             </div>
             <p class="crypto-info__price" id="cryptoPrice">$42,000</p>
           </div>
-          <div class="crypto-graph"></div> -->
-      </section>
+          <div class="crypto-graph"></div>
+      </section> -->
       <!-- <div class="crypto-metric__container">
           <div class="crypto-metric__row">
             <div class="crypto-metric__block">
@@ -178,54 +176,5 @@
         <p>&copy; 2025 Crypto Tracker</p>
       </footer>
     </div>
-
-    <script>
-      const ctx = document.getElementById("myChart").getContext("2d");
-
-      // Fake Bitcoin data (e.g., prices over 7 days)
-      const fakeData = {
-        labels: ["Day 1", "Day 2", "Day 3", "Day 4", "Day 5", "Day 6", "Day 7"],
-        datasets: [
-          {
-            label: "Fake Bitcoin Price (USD)",
-            data: [45000, 46000, 45500, 47000, 49000, 48500, 50000], // Simulated price
-            borderColor: "rgba(255, 99, 132, 1)", // Line color
-            backgroundColor: "rgba(255, 99, 132, 0.2)", // Area color
-            fill: true, // Fill under the curve
-            tension: 0.4, // Smoothness of the curve
-            pointRadius: 5, // Point size on the graph
-            borderWidth: 2,
-          },
-        ],
-      };
-
-      const fakeBitcoinChart = new Chart(ctx, {
-        type: "line", // Line chart type
-        data: fakeData,
-        options: {
-          responsive: true,
-          scales: {
-            x: {
-              title: {
-                display: true,
-                text: "Days",
-              },
-            },
-            y: {
-              title: {
-                display: true,
-                text: "Price in USD",
-              },
-              beginAtZero: false,
-            },
-          },
-          plugins: {
-            legend: {
-              position: "top",
-            },
-          },
-        },
-      });
-    </script>
   </body>
 </html>
