@@ -26,34 +26,32 @@ class BitcoinView extends View {
               <div class="bitcoin-metric__block">
                 <span class="bitcoin-metric__label">Market Cap</span>
                 <span class="bitcoin-metric__value">${formatterData.format(
-                  this._data.metric.MarketCap
+                  this._data.marketCap
                 )} $</span>
               </div>
-              <div class="bitcoin-metric__block">
-                <span class="bitcoin-metric__label">Volume</span>
-                <span class="bitcoin-metric__value">${formatterData.format(
-                  this._data.metric.volume
-                )} $</span>
-              </div>
+            
             </div>
             <div class="bitcoin-metrics-row">
               <div class="bitcoin-metric__block">
                 <span class="bitcoin-metric__label">All time high</span>
                 <span class="bitcoin-metric__value">${formatterData.format(
-                  this._data.metric.allTimeHigh
+                  this._data.ath
                 )}</span>
               </div>
-              <div class="bitcoin-metric__block">
-                <span class="bitcoin-metric__label">All time low</span>
-                <span class="bitcoin-metric__value">${formatterData.format(
-                  this._data.metric.allTimeLow
-                )} K</span>
-              </div>
+              
             </div>
-         
+            <div class="bitcoin-metrics-row">
+                <div class="bitcoin-metric__block">
+                <span class="bitcoin-metric__label">Volume</span>
+                <span class="bitcoin-metric__value">${formatterData.format(
+                  this._data.volume
+                )} $</span>
+              </div>
+              
+            </div>
           </div>
         </div>
-        <h1 class="bitcoin-price">$${this._data.current_price}</h1>
+        <h1 class="bitcoin-price">$${this._data.currentPrice}</h1>
     `;
   }
 }
