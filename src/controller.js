@@ -7,36 +7,54 @@ import { cryptoMetric } from "./model.js";
 import { mapCryptoCoinID } from "./model.js";
 
 import * as model from "./model.js";
+import bitcoinView from "./View/bitcoinView.js";
 
-const controlCrypto = async function () {
+// const controlCrypto = async function () {
+//   try {
+//     const id = searchView.getQuery();
+
+//     if (!mapCryptoCoinID.has(id)) {
+//       throw new Error(`The coin you are looking for does not exists`);
+//     }
+//     await model.loadCoinData(id);
+
+//     const crypto = model.state.cryptocurrency;
+//     const { metric } = model.cryptoMetric;
+//     resultsView.render(crypto);
+//     searchView._updateMetrics(Object.values(metric));
+//   } catch (error) {
+//     console.error(error);
+//   }
+// };
+
+const controlBitcoin = async function () {
   try {
-    const id = searchView.getQuery();
+    await model.loadCoinData("bitcoin");
 
-    if (!mapCryptoCoinID.has(id)) {
-      throw new Error(`The coin you are looking for does not exists`);
-    }
-    await model.loadCoinData(id);
-
-    const crypto = model.state.cryptocurrency;
-    const { metric } = model.cryptoMetric;
-    resultsView.render(crypto);
-    searchView._updateMetrics(Object.values(metric));
+    const bitcoinData = {
+      ...model.state.cryptocurrency,
+      ...model.cryptoMetric,
+    };
+    bitcoinView.render(bitcoinData);
+    console.log(bitcoinData);
   } catch (error) {
     console.error(error);
   }
 };
 
-const controlTopCrypto = async function () {
-  await model.Top20Crypto();
+controlBitcoin();
 
-  const cryptoResult = model.state.search.results;
-  resultsTopCryptoView.render(cryptoResult);
-};
+// const controlTopCrypto = async function () {
+//   await model.Top20Crypto();
 
-controlTopCrypto();
+//   const cryptoResult = model.state.search.results;
+//   resultsTopCryptoView.render(cryptoResult);
+// };
 
-const init = function () {
-  searchView.addHandlerSearch(controlCrypto);
-};
+// controlTopCrypto();
 
-init();
+// const init = function () {
+//   searchView.addHandlerSearch(controlCrypto);
+// };
+
+// init();

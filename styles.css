@@ -155,8 +155,11 @@ header {
 
 .bitcoin-wrapper {
   display: flex;
+  align-items: center;
   margin: 0 auto;
   width: 80%;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .bitcoin-title-container {
@@ -172,10 +175,6 @@ header {
 .bitcoin-title {
   font-size: 2.4rem;
   margin-bottom: 1rem;
-}
-.bitcoin-price {
-  font-size: 4.8rem;
-  margin-bottom: 3rem;
 }
 
 .bitcoin-metrics-container {
@@ -211,6 +210,19 @@ header {
   font-weight: 600;
 }
 
+.bitcoin {
+  width: 100%;
+}
+
+.bitcoin-title {
+  font-size: 5.4rem;
+}
+
+.bitcoin-price {
+  font-size: 20rem;
+  font-weight: 900;
+  letter-spacing: 1.5rem;
+}
 .app-title {
   font-size: var(--heading-font-size);
   color: #343a40;
