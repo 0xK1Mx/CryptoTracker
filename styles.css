@@ -460,3 +460,96 @@ footer {
   font-size: 2.4rem;
   font-weight: 600;
 }
+
+.top200-cryptos {
+  width: 100%;
+  height: auto; /* Allow the section to take more space if needed */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0; /* Add spacing to prevent overlapping */
+  margin-top: 10rem;
+}
+
+.market-table-container {
+  width: 100%;
+  max-width: 1200px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background: #ffffff;
+  padding: 10px; /* Ensure content has space */
+}
+
+.market-table {
+  width: 80%;
+  border-spacing: 0;
+  table-layout: fixed;
+}
+
+.market-body tr {
+  transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+  height: 7rem; /* Reduced row height */
+  background-color: #ffffff;
+}
+
+/* Hover effect */
+.market-body tr:hover {
+  background: #f9fafb;
+  transform: scale(1.02);
+}
+
+.market-header {
+  height: 8rem; /* Reduced header height */
+  background-color: #f1f1f1;
+}
+
+.table-heading {
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 0.05rem;
+  padding: 10px 8px;
+  text-align: left;
+  background-color: white;
+  border-bottom: 2px solid #ddd;
+  border-top: 2px solid #ddd;
+  color: #333;
+}
+
+.table-cell {
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 8px;
+}
+
+.table-cell-hour,
+.table-cell-day,
+.table-cell-week {
+  padding: 8px 6px;
+}
+
+.positive {
+  color: #008000;
+  font-weight: bold;
+}
+
+.negative {
+  color: #ff0000;
+  font-weight: bold;
+}
+
+.crypto-logo {
+  width: 2rem;
+  height: 2rem;
+  margin-right: 8px;
+}
+
+.table-heading-rank,
+.table-cell-rank {
+  text-align: center;
+}
+
+.table-name-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}

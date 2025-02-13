@@ -2,7 +2,7 @@ import { API_URL } from "./config.js";
 
 export const state = {
   bitcoin: {},
-  search: {
+  cryptoProjects: {
     results: [],
   },
   globalMarket: {},
@@ -62,6 +62,29 @@ export const loadBitcoinData = async function (id) {
   } catch (err) {
     console.error(err);
   }
+};
+
+export const loadCryptoProjects = async function () {
+  const response = await fetch(
+    "https://api.coingecko.com/api/v3/coins/markets?vs_currency=USD&order=market_cap_desc&per_page=20"
+  );
+  const data = await response.json();
+  console.log(data);
+  state.cryptoProjects.results = data.map((project) => {
+    return {
+      id: project.id,
+      image: project.image,
+      price: project.current_price,
+      price24change: project.price_change_percentage_24h,
+      supply: project.circulating_supply,
+      marketcap: project.market_cap,
+      rank: project.market_cap_rank,
+      projectName: project.name,
+      volume: project.total_volume,
+      low24: project.low_24h,
+      high24: project.high_24h,
+    };
+  });
 };
 
 console.log(state);

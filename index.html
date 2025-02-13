@@ -108,74 +108,67 @@
         <h1 class="bitcoin-price">$97,233</h1>
       </div>
     </div>
-
-    <!-- <div class="container"> -->
-    <!-- <form class="crypto-search">
-        <input
-          type="text"
-          id="cryptoInput"
-          class="crypto-search__input"
-          placeholder="Enter cryptocurrency (e.g. Bitcoin)"
-        />
-        <button class="crypto-search__btn" id="searchBtn">Search</button>
-      </form>
-
-    <div class="crypto-info__container">
-        <div class="crypto-info__header">
-          <h2 class="crypto-section__title">Top 20 cryptocurrencies</h2>
-          <ul class="crypto-list"></ul>
-        </div> -->
-
-    <!-- <section class="crypto-info" id="cryptoInfoSection">
-        <div class="crypto-info-heading">
-            <div class="crypto-info__group">
-              <img
-                src="https://cryptocompare.com/media/19633/btc.png"
-                alt="Bitcoin"
-                id="cryptoImage"
-                class="crypto-info__image"
-              />
-              <h2 class="crypto-info__name">Bitcoin</h2>
-            </div>
-            <p class="crypto-info__price" id="cryptoPrice">$42,000</p>
-          </div>
-          <div class="crypto-graph"></div>
-      </section> -->
-    <!-- <div class="crypto-metric__container">
-          <div class="crypto-metric__row">
-            <div class="crypto-metric__block">
-              <span class="crypto-metric__label">Market Cap</span>
-              <span class="crypto-metric__value">1.93T$</span>
-            </div>
-            <div class="crypto-metric__block">
-              <span class="crypto-metric__label">Volume</span>
-              <span class="crypto-metric__value">92.53T$</span>
-            </div>
-          </div>
-
-          <div class="crypto-metric__row">
-            <div class="crypto-metric__block">
-              <span class="crypto-metric__label">Circulating supply</span>
-              <span class="crypto-metric__value">46B</span>
-            </div>
-            <div class="crypto-metric__block">
-              <span class="crypto-metric__label">Total supply</span>
-              <span class="crypto-metric__value">92.53T</span>
-            </div>
-          </div>
-
-          <div class="crypto-metric__row">
-            <div class="crypto-metric__block">
-              <span class="crypto-metric__label">All time high</span>
-              <span class="crypto-metric__value">5.12$</span>
-            </div>
-            <div class="crypto-metric__block">
-              <span class="crypto-metric__label">All time low</span>
-              <span class="crypto-metric__value">0.40$</span>
-            </div>
-          </div>
-        </div> 
-      </div>-->
+    <main class="top200-cryptos">
+      <table class="market-table">
+        <thead class="market-header">
+          <tr>
+            <th class="table-heading table-heading-rank">#</th>
+            <th class="table-heading table-heading-name">Name</th>
+            <th class="table-heading table-heading-price">Price</th>
+            <th class="table-heading table-heading-hour">1h %</th>
+            <th class="table-heading table-heading-day">24h %</th>
+            <th class="table-heading table-heading-week">7d %</th>
+            <th class="table-heading table-heading-marketcap">Market Cap</th>
+            <th class="table-heading table-heading-volume">Volume (24h)</th>
+            <th class="table-heading table-heading-supply">
+              Circulating Supply
+            </th>
+          </tr>
+        </thead>
+        <tbody class="market-body">
+          <tr>
+            <td class="table-cell table-cell-rank">1</td>
+            <td class="table-cell table-cell-name">
+              <div class="table-name-wrapper">
+                <img
+                  src="https://cryptocompare.com/media/19633/btc.png"
+                  alt="Bitcoin"
+                  class="crypto-logo"
+                />
+                <p>Bitcoin</p>
+              </div>
+            </td>
+            <td class="table-cell table-cell-price">$45,000</td>
+            <td class="table-cell table-cell-hour positive">+0.5%</td>
+            <td class="table-cell table-cell-day negative">-1.2%</td>
+            <td class="table-cell table-cell-week positive">+3.0%</td>
+            <td class="table-cell table-cell-marketcap">$850B</td>
+            <td class="table-cell table-cell-volume">$30B</td>
+            <td class="table-cell table-cell-supply">19M BTC</td>
+          </tr>
+          <tr>
+            <td class="table-cell table-cell-rank">1</td>
+            <td class="table-cell table-cell-name">
+              <div class="table-name-wrapper">
+                <img
+                  src="https://cryptocompare.com/media/19633/btc.png"
+                  alt="Bitcoin"
+                  class="crypto-logo"
+                />
+                <p>Bitcoin</p>
+              </div>
+            </td>
+            <td class="table-cell table-cell-price">$45,000</td>
+            <td class="table-cell table-cell-hour positive">+0.5%</td>
+            <td class="table-cell table-cell-day negative">-1.2%</td>
+            <td class="table-cell table-cell-week positive">+3.0%</td>
+            <td class="table-cell table-cell-marketcap">$850B</td>
+            <td class="table-cell table-cell-volume">$30B</td>
+            <td class="table-cell table-cell-supply">19M BTC</td>
+          </tr>
+        </tbody>
+      </table>
+    </main>
     <footer>
       <p>&copy; 2025 Crypto Tracker</p>
     </footer>

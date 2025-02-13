@@ -3,6 +3,7 @@ import { API_URL } from "./config.js";
 import marketStatsView from "./View/marketStatsView.js";
 import * as model from "./model.js";
 import bitcoinView from "./View/bitcoinView.js";
+import CryptoDashboardView from "./View/CryptoDashboardView.js";
 
 const controlBitcoin = async function () {
   try {
@@ -31,3 +32,15 @@ const controlMarketStats = async function () {
 };
 
 controlMarketStats();
+
+const controlCryptoDashboard = async function () {
+  try {
+    await model.loadCryptoProjects();
+    const cryptoProjects = model.state.cryptoProjects.results;
+    CryptoDashboardView.render(cryptoProjects);
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+controlCryptoDashboard();
