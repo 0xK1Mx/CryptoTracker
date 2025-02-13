@@ -4,9 +4,12 @@ export const state = {
   bitcoin: {},
   cryptoProjects: {
     results: [],
+    page: 1,
+    resultsPerPage: 50,
   },
   globalMarket: {},
 };
+
 export const loadMarketData = async function () {
   try {
     const [response, response2] = await Promise.all([
@@ -66,7 +69,7 @@ export const loadBitcoinData = async function (id) {
 
 export const loadCryptoProjects = async function () {
   const response = await fetch(
-    "https://api.coingecko.com/api/v3/coins/markets?vs_currency=USD&order=market_cap_desc&per_page=20"
+    "https://api.coingecko.com/api/v3/coins/markets?vs_currency=USD&order=market_cap_desc&per_page=200"
   );
   const data = await response.json();
   console.log(data);
@@ -83,8 +86,16 @@ export const loadCryptoProjects = async function () {
       volume: project.total_volume,
       low24: project.low_24h,
       high24: project.high_24h,
+      symbol: project.symbol,
     };
   });
+};
+
+export const getResults = function (page = state.cryptoProjects.page) {
+  const start = (page - 1) * state.cryptoProjects.resultsPerPage;
+  const end = page * state.cryptoProjects.resultsPerPage;
+  console.log(start, end);
+  return state.cryptoProjects.results.slice(start, end);
 };
 
 console.log(state);

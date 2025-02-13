@@ -4,6 +4,10 @@ class CryptoDashBoardView extends View {
   _parentEl = document.querySelector(".market-body");
 
   _generateMarkUp() {
+    const formatterData = new Intl.NumberFormat("en-US", {
+      notation: "compact",
+      maximumFractionDigits: 2,
+    });
     return this._data
       .map(
         (el) =>
@@ -21,11 +25,19 @@ class CryptoDashBoardView extends View {
             </td>
             <td class="table-cell table-cell-price">$${el.price}</td>
             <td class="table-cell table-cell-hour positive">+0.5%</td>
-            <td class="table-cell table-cell-day negative">-1.2%</td>
+            <td class="table-cell table-cell-day ${
+              el.price24change > 0 ? "positive" : "negative"
+            }">${formatterData.format(el.price24change)}%</td>
             <td class="table-cell table-cell-week positive">+3.0%</td>
-            <td class="table-cell table-cell-marketcap">$850B</td>
-            <td class="table-cell table-cell-volume">$30B</td>
-            <td class="table-cell table-cell-supply">19M BTC</td>
+            <td class="table-cell table-cell-marketcap">$${formatterData.format(
+              el.marketcap
+            )}</td>
+            <td class="table-cell table-cell-volume">$${formatterData.format(
+              el.volume
+            )}</td>
+            <td class="table-cell table-cell-supply">${formatterData.format(
+              el.supply
+            )} ${el.symbol} </td>
           </tr>
       `
       )

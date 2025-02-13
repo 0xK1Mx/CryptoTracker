@@ -37,7 +37,7 @@ const controlCryptoDashboard = async function () {
   try {
     await model.loadCryptoProjects();
     const cryptoProjects = model.state.cryptoProjects.results;
-    CryptoDashboardView.render(cryptoProjects);
+    CryptoDashboardView.render(model.getResults());
   } catch (error) {
     console.error(error);
   }
