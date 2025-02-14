@@ -4,6 +4,7 @@ import marketStatsView from "./View/marketStatsView.js";
 import * as model from "./model.js";
 import bitcoinView from "./View/bitcoinView.js";
 import CryptoDashboardView from "./View/CryptoDashboardView.js";
+import paginationView from "./View/paginationView.js";
 
 const controlBitcoin = async function () {
   try {
@@ -36,11 +37,23 @@ controlMarketStats();
 const controlCryptoDashboard = async function () {
   try {
     await model.loadCryptoProjects();
-    const cryptoProjects = model.state.cryptoProjects.results;
+    const cryptoProjects = model.state.cryptoProjects;
     CryptoDashboardView.render(model.getResults());
+
+    paginationView.render(cryptoProjects);
   } catch (error) {
     console.error(error);
   }
 };
 
 controlCryptoDashboard();
+
+const controlPagination = function (page) {
+  CryptoDashboardView.render(model.getResults(page));
+  paginationView.render(model.state.cryptoProjects);
+};
+
+function init() {
+  paginationView.paginationHandler(controlPagination);
+}
+init();

@@ -94,7 +94,9 @@ export const loadCryptoProjects = async function () {
 export const getResults = function (page = state.cryptoProjects.page) {
   const start = (page - 1) * state.cryptoProjects.resultsPerPage;
   const end = page * state.cryptoProjects.resultsPerPage;
-  console.log(start, end);
+
+  //update the page in the state
+  state.cryptoProjects.page = page;
   return state.cryptoProjects.results.slice(start, end);
 };
 
