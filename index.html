@@ -19,9 +19,60 @@
             <li class="navbar-list__item">Product</li>
           </ul>
         </nav>
-        <div class="auth-buttons">
+        <!-- <div class="auth-buttons">
           <button class="btn">Sign up</button>
           <button class="btn">Login</button>
+        </div> -->
+        <div class="user-assets">
+          <button class="crypto-wallet-btn" aria-label="Open Wallet">
+            <svg id="icon-wallet" aria-hidden="true">
+              <use href="src/img/wallet.svg#wallet"></use>
+            </svg>
+          </button>
+
+          <div class="dropdown-content" id="wallet-dropdown">
+            <div class="total-asset-value">
+              <p><strong>Assets</strong></p>
+              <span class="value">$29 923,93$</span>
+            </div>
+
+            <ul class="assets-list">
+              <li class="assets">
+                <div class="crypto-asset">
+                  <img
+                    class="asset-img"
+                    src="https://cryptocompare.com/media/19633/btc.png"
+                    alt="btc"
+                  />
+                  <div class="asset-ctn">
+                    <h3 class="asset-name">Bitcoin</h3>
+                    <span class="asset-price">$97,324</span>
+                  </div>
+                </div>
+                <div class="crypto-asset-value">
+                  <span class="value-in-crypto">0.6 Btc</span>
+                  <span class="value-in-cash">74,324$</span>
+                </div>
+              </li>
+              <li class="assets">
+                <div class="crypto-asset">
+                  <img
+                    class="asset-img"
+                    src="https://cryptocompare.com/media/19633/btc.png"
+                    alt="btc"
+                  />
+                  <div class="asset-ctn">
+                    <h3 class="asset-name">Bitcoin</h3>
+                    <span class="asset-price">$97,324</span>
+                  </div>
+                </div>
+                <div class="crypto-asset-value">
+                  <span class="value-in-crypto">0.6 Btc</span>
+                  <span class="value-in-cash">74,324$</span>
+                </div>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
       <div class="header-bottom">
