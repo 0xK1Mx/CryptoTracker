@@ -54,6 +54,7 @@ body {
   align-items: center;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 /* Main Container */
@@ -699,4 +700,82 @@ footer {
 }
 .value-in-cash {
   font-size: 1.4rem;
+}
+
+.modal-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hidden {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+/* Modal box */
+.modal {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  min-width: 40rem;
+  height: 40rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  align-items: center;
+}
+
+.crypto-modal {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 10rem;
+  padding: 0 1rem;
+  background-color: #ffe066;
+}
+.crypto-modal-info {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.crypto-modal-name {
+  font-size: 2.8rem;
+  font-weight: 600;
+}
+
+.crypto-modal-img {
+  width: 3rem;
+}
+
+.crypto-modal-price {
+  font-size: 3.6rem;
+  font-weight: 600;
+}
+
+.btn-buy {
+  width: 10rem;
+  height: 4rem;
+  border: none;
+  background-color: #ffe066;
+}
+
+.amount-buy {
+  width: 15rem;
+  height: 3rem;
+}
+
+.modal-message {
+  font-size: 1.6rem;
+  font-weight: 600;
 }

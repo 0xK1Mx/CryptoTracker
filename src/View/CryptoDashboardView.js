@@ -11,7 +11,7 @@ class CryptoDashBoardView extends View {
     return this._data
       .map(
         (el) =>
-          `<tr>
+          `<tr class="crypto-project" data-Crypto="${el.id}">
             <td class="table-cell table-cell-rank">${el.rank}</td>
             <td class="table-cell table-cell-name">
               <div class="table-name-wrapper">
@@ -24,11 +24,9 @@ class CryptoDashBoardView extends View {
               </div>
             </td>
             <td class="table-cell table-cell-price">$${el.price}</td>
-            <td class="table-cell table-cell-hour positive">+0.5%</td>
             <td class="table-cell table-cell-day ${
               el.price24change > 0 ? "positive" : "negative"
             }">${formatterData.format(el.price24change)}%</td>
-            <td class="table-cell table-cell-week positive">+3.0%</td>
             <td class="table-cell table-cell-marketcap">$${formatterData.format(
               el.marketcap
             )}</td>

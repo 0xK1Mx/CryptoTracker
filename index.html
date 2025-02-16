@@ -166,9 +166,7 @@
             <th class="table-heading table-heading-rank">#</th>
             <th class="table-heading table-heading-name">Name</th>
             <th class="table-heading table-heading-price">Price</th>
-            <th class="table-heading table-heading-hour">1h %</th>
             <th class="table-heading table-heading-day">24h %</th>
-            <th class="table-heading table-heading-week">7d %</th>
             <th class="table-heading table-heading-marketcap">Market Cap</th>
             <th class="table-heading table-heading-volume">Volume (24h)</th>
             <th class="table-heading table-heading-supply">
@@ -177,7 +175,7 @@
           </tr>
         </thead>
         <tbody class="market-body">
-          <tr>
+          <tr class="crypto-project">
             <td class="table-cell table-cell-rank">1</td>
             <td class="table-cell table-cell-name">
               <div class="table-name-wrapper">
@@ -190,9 +188,7 @@
               </div>
             </td>
             <td class="table-cell table-cell-price">$45,000</td>
-            <td class="table-cell table-cell-hour positive">+0.5%</td>
             <td class="table-cell table-cell-day negative">-1.2%</td>
-            <td class="table-cell table-cell-week positive">+3.0%</td>
             <td class="table-cell table-cell-marketcap">$850B</td>
             <td class="table-cell table-cell-volume">$30B</td>
             <td class="table-cell table-cell-supply">19M BTC</td>
@@ -210,9 +206,7 @@
               </div>
             </td>
             <td class="table-cell table-cell-price">$45,000</td>
-            <td class="table-cell table-cell-hour positive">+0.5%</td>
             <td class="table-cell table-cell-day negative">-1.2%</td>
-            <td class="table-cell table-cell-week positive">+3.0%</td>
             <td class="table-cell table-cell-marketcap">$850B</td>
             <td class="table-cell table-cell-volume">$30B</td>
             <td class="table-cell table-cell-supply">19M BTC</td>
@@ -225,6 +219,25 @@
         <button class="btns-pagination btn-next">Next</button> -->
       </div>
     </main>
+    <div class="modal-container hidden" id="modalContainer">
+      <div class="modal">
+        <div class="crypto-modal">
+          <div class="crypto-modal-info">
+            <img
+              src="https://cryptocompare.com/media/19633/btc.png"
+              alt="btc"
+              class="crypto-modal-img"
+            />
+            <h3 class="crypto-modal-name">Bitcoin</h3>
+          </div>
+          <span class="crypto-modal-price">$97,324</span>
+        </div>
+        <span class="modal-message">How many bitcoin you want to buy?</span>
+        <input class="amount-buy" type="text" />
+
+        <button class="btn-buy">Buy</button>
+      </div>
+    </div>
     <footer>
       <p>&copy; 2025 Crypto Tracker</p>
     </footer>

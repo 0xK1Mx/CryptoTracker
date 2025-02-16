@@ -5,6 +5,7 @@ import * as model from "./model.js";
 import bitcoinView from "./View/bitcoinView.js";
 import CryptoDashboardView from "./View/CryptoDashboardView.js";
 import paginationView from "./View/paginationView.js";
+import modalView from "./View/modalView.js";
 
 const controlBitcoin = async function () {
   try {
@@ -39,7 +40,7 @@ const controlCryptoDashboard = async function () {
     await model.loadCryptoProjects();
     const cryptoProjects = model.state.cryptoProjects;
     CryptoDashboardView.render(model.getResults());
-
+    modalView.attachModalEvents();
     paginationView.render(cryptoProjects);
   } catch (error) {
     console.error(error);
